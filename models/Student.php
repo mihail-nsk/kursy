@@ -37,8 +37,7 @@ class Student extends \yii\db\ActiveRecord
             [['Class', 'FilialID'], 'integer'],
             [['FirstName', 'LastName', 'MiddleName', 'Phone', 'Email'], 'string', 'max' => 32],
             [['Phone'], 'unique'],
-            [['Email'], 'unique'],
-            [['Comment'],'safe']
+            [['Comment','Email'],'safe']
         ];
     }
 
