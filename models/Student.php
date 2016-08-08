@@ -15,6 +15,7 @@ use Yii;
  * @property string $Email
  * @property integer $Class
  * @property integer $FilialID
+ * @property string $Comment
  */
 class Student extends \yii\db\ActiveRecord
 {
@@ -37,6 +38,7 @@ class Student extends \yii\db\ActiveRecord
             [['FirstName', 'LastName', 'MiddleName', 'Phone', 'Email'], 'string', 'max' => 32],
             [['Phone'], 'unique'],
             [['Email'], 'unique'],
+            [['Comment'],'safe']
         ];
     }
 
@@ -54,6 +56,7 @@ class Student extends \yii\db\ActiveRecord
             'Email' => Yii::t('app', 'Email'),
             'Class' => Yii::t('app', 'Class'),
             'FilialID' => Yii::t('app', 'Filial ID'),
+            'Comment' => Yii::t('app','Comment')
         ];
     }
 
