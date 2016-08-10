@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'MiddleName',
             'Phone',
             'filial.Address',
+            'Comment',
             // 'Email:email',
             // 'Class',
             // 'FilialID',

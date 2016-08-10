@@ -12,10 +12,14 @@ use Yii;
  * @property string $LastName
  * @property string $MiddleName
  * @property string $Phone
- * @property string $Email
  * @property integer $Class
  * @property integer $FilialID
  * @property string $Comment
+ * @property string $Email
+ * @property string $Date
+ * @property string $link
+ * @property string $source
+ * @property string $manager
  */
 class Student extends \yii\db\ActiveRecord
 {
@@ -35,9 +39,11 @@ class Student extends \yii\db\ActiveRecord
         return [
             [['FirstName', 'LastName', 'Class', 'FilialID'], 'required'],
             [['Class', 'FilialID'], 'integer'],
-            [['FirstName', 'LastName', 'MiddleName', 'Phone', 'Email'], 'string', 'max' => 32],
+            [['Comment'], 'string'],
+            [['Date'], 'safe'],
+            [['FirstName', 'LastName', 'MiddleName', 'Phone'], 'string', 'max' => 32],
+            [['Email', 'link', 'source', 'manager'], 'string', 'max' => 255],
             [['Phone'], 'unique'],
-            [['Comment','Email'],'safe']
         ];
     }
 
@@ -52,10 +58,14 @@ class Student extends \yii\db\ActiveRecord
             'LastName' => Yii::t('app', 'Last Name'),
             'MiddleName' => Yii::t('app', 'Middle Name'),
             'Phone' => Yii::t('app', 'Phone'),
-            'Email' => Yii::t('app', 'Email'),
             'Class' => Yii::t('app', 'Class'),
             'FilialID' => Yii::t('app', 'Filial ID'),
-            'Comment' => Yii::t('app','Comment')
+            'Comment' => Yii::t('app', 'Comment'),
+            'Email' => Yii::t('app', 'Email'),
+            'Date' => Yii::t('app', 'Date'),
+            'link' => Yii::t('app', 'Link'),
+            'source' => Yii::t('app', 'Source'),
+            'manager' => Yii::t('app', 'Manager'),
         ];
     }
 
