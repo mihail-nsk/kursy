@@ -12,7 +12,7 @@ use Yii;
  * @property integer $TeacherID
  * @property integer $FilialID
  */
-class Subject extends \yii\db\ActiveRecord
+class Subject extends MyModel
 {
     /**
      * @inheritdoc

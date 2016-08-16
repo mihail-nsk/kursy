@@ -12,6 +12,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="expenses-view">
 
+    <h1><?= Html::encode($this->title) ?></h1>
+
     <p>
         <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->ExpensesID], ['class' => 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->ExpensesID], [
@@ -29,6 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'ExpensesID',
             'Expenses',
             'UserID',
+            'Date',
+            'People',
         ],
     ]) ?>
 

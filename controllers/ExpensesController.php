@@ -8,7 +8,6 @@ use app\models\ExpensesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 
 /**
  * ExpensesController implements the CRUD actions for Expenses model.
@@ -21,16 +20,6 @@ class ExpensesController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['index','view','create','update','delete'],
-                        'allow' => true,
-                        'roles' => ['admin-access'],
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

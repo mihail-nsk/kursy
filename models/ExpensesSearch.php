@@ -5,7 +5,6 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Expenses;
 
 /**
  * ExpensesSearch represents the model behind the search form about `app\models\Expenses`.
@@ -18,8 +17,8 @@ class ExpensesSearch extends Expenses
     public function rules()
     {
         return [
-            [['ExpensesID', 'UserID'], 'integer'],
-            [['Expenses'], 'safe'],
+            [['ExpensesID', 'UserID', 'People'], 'integer'],
+            [['Expenses', 'Date'], 'safe'],
         ];
     }
 
@@ -61,6 +60,8 @@ class ExpensesSearch extends Expenses
         $query->andFilterWhere([
             'ExpensesID' => $this->ExpensesID,
             'UserID' => $this->UserID,
+            'Date' => $this->Date,
+            'People' => $this->People,
         ]);
 
         $query->andFilterWhere(['like', 'Expenses', $this->Expenses]);

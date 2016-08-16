@@ -21,7 +21,7 @@ use Yii;
  * @property string $source
  * @property string $manager
  */
-class Student extends \yii\db\ActiveRecord
+class Student extends MyModel
 {
     /**
      * @inheritdoc
@@ -42,8 +42,7 @@ class Student extends \yii\db\ActiveRecord
             [['Comment'], 'string'],
             [['Date'], 'safe'],
             [['FirstName', 'LastName', 'MiddleName', 'Phone'], 'string', 'max' => 32],
-            [['Email', 'link', 'source', 'manager'], 'string', 'max' => 255],
-            [['Phone'], 'unique'],
+            [['Email', 'link', 'source', 'manager'], 'string', 'max' => 255]
         ];
     }
 
@@ -62,7 +61,7 @@ class Student extends \yii\db\ActiveRecord
             'FilialID' => Yii::t('app', 'Filial ID'),
             'Comment' => Yii::t('app', 'Comment'),
             'Email' => Yii::t('app', 'Email'),
-            'Date' => Yii::t('app', 'Date'),
+            'Date' => Yii::t('app', 'Date contact'),
             'link' => Yii::t('app', 'Link'),
             'source' => Yii::t('app', 'Source'),
             'manager' => Yii::t('app', 'Manager'),

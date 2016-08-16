@@ -12,7 +12,7 @@ use Yii;
  * @property string $Phone
  * @property string $Email
  */
-class Filial extends \yii\db\ActiveRecord
+class Filial extends MyModel
 {
     /**
      * @inheritdoc

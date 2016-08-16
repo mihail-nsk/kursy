@@ -12,7 +12,7 @@ use Yii;
  * @property string $Phone
  * @property string $Email
  */
-class Teacher extends \yii\db\ActiveRecord
+class Teacher extends MyModel
 {
     /**
      * @inheritdoc
